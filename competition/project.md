@@ -37,19 +37,19 @@ C. *for user_avg.json and business_avg.sjon*
 1. used surprise built whole_trainset *build_full_trainset()* and whole_testset *build_testset()*
 2. built 3 SVD models, saved these 3 models in Local
 3. in the same loop, built whole_predict dictionary {(uid,bid):[rest fetures]}
-4. to process whole_predict, read each key,
-    collect user_data[uid], value from whole_preduct[:3],
-    used above features build new_tmp_features
+4. to process whole_predict, read each key, <br>
+    collect user_data[uid], value from whole_preduct[:3], <br>
+    used above features build new_tmp_features <br>
 5. *build data*
-   data = new_featrues[:,2:]
+   data = new_featrues[:,2:] <br>
 6. *build label*
-    read each line in new_tmp_features, collect(test_set[(uid,bid)])
+    read each line in new_tmp_features, collect(test_set[(uid,bid)]) <br>
 7. *build matrix*
-'''
-xgb.DMatrix(data = data.values, label = labels)
-'''
-8. *build model*
-xgb.train
+''' <br>
+xgb.DMatrix(data = data.values, label = labels) <br>
+''' 
+8. *build model* <br>
+xgb.train <br>
 9. *save_model('matrix.model')*
 
 ### predict.py
